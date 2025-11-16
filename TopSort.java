@@ -94,17 +94,18 @@ public void topological(Map<Node, Integer> indegree, List<Node> course) {
     Map<String, List<String>> adj = new HashMap<>();
     for (Node n : course) {
         adj.put(n.node, new ArrayList<>());
-    }
-    for (Node n : course) {
-        if (n.preReq1 != null && adj.containsKey(n.preReq1)) 
-            adj.get(n.preReq1).add(n.node);
+}
+    
+        for (Node n : course) {
+            if (n.preReq1 != null && adj.containsKey(n.preReq1)) 
+                adj.get(n.preReq1).add(n.node);
 
         if (n.preReq2 != null && adj.containsKey(n.preReq2)) 
             adj.get(n.preReq2).add(n.node);
 
         if (n.preReq3 != null && adj.containsKey(n.preReq3)) 
             adj.get(n.preReq3).add(n.node);
-    }
+ }
 
    
     List<Node> zero = new ArrayList<>();
